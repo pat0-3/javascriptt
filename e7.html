@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Ejercicio 7: Carrusel simple -->
+    <div class="exercise">
+        <h2>7. Carrusel de imágenes</h2>
+        <div class="demo-area" style="text-align:center;">
+            <img id="carruselImg" src="https://www.lavanguardia.com/files/og_thumbnail/uploads/2021/06/07/60be17e39ecfa.jpeg" style="max-width:60%; border-radius:10px;">
+            <div style="margin-top:15px;">
+                <button onclick="cambiarImagen(-1)">Anterior</button>
+                <button onclick="cambiarImagen(1)">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Ejercicio 7
+        const imagenes = [
+            'https://www.lavanguardia.com/files/og_thumbnail/uploads/2021/06/07/60be17e39ecfa.jpeg',
+            'https://avesexoticas.org/wp-content/uploads/2017/07/pato-real-5.jpg',
+            'https://img.freepik.com/foto-gratis/primer-plano-pato-cerca-estanque-zoologico_181624-51048.jpg?semt=ais_hybrid&w=740'
+        ];
+        let imgIndex = 0;
+        function cambiarImagen(direccion) {
+            imgIndex += direccion;
+            if (imgIndex >= imagenes.length) imgIndex = 0;
+            if (imgIndex < 0) imgIndex = imagenes.length - 1;
+            document.getElementById('carruselImg').src = imagenes[imgIndex];
+        }
+
+         // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style); 
+    </script>
+</body>
+</html>

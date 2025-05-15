@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 5: Contador de caracteres -->
+    <div class="exercise">
+        <h2>5. Contador de texto</h2>
+        <p>Muestra caracteres restantes en un textarea:</p>
+        <div class="demo-area">
+            <textarea id="miTexto" rows="3" maxlength="100" oninput="actualizarContador()"></textarea>
+            <p>Caracteres: <span id="contador">0</span>/100</p>
+        </div>
+    </div>
+    <script>
+     // Ejercicio 5
+        function actualizarContador() {
+            const texto = document.getElementById('miTexto').value;
+            document.getElementById('contador').textContent = texto.length;
+        }
+
+         // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+</script>
+</body>
+
+</html>

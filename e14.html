@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14</title>
+    <link rel="stylesheet" href="css/style.css">
+<body>
+      <!-- Ejercicio 14: Selector de tema oscuro -->
+    <div class="exercise">
+        <h2>14. Selector de tema</h2>
+        <div class="demo-area">
+            <button onclick="toggleTema()">Cambiar a modo oscuro</button>
+            <p id="temaActual">Tema actual: claro</p>
+        </div>
+    </div>
+
+    <script>
+         // Ejercicio 14
+        function toggleTema() {
+            document.body.classList.toggle('dark-mode');
+            const boton = document.querySelector('#ej14 button');
+            const texto = document.getElementById('temaActual');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.style.backgroundColor = '#121212';
+                document.body.style.color = '#fff';
+                boton.textContent = 'Cambiar a modo claro';
+                texto.textContent = 'Tema actual: oscuro';
+            } else {
+                document.body.style.backgroundColor = '#f5f7fa';
+                document.body.style.color = '#212529';
+                boton.textContent = 'Cambiar a modo oscuro';
+                texto.textContent = 'Tema actual: claro';
+            }
+        }
+
+           // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .dark-mode .exercise {
+                background: #333;
+                color: #fff;
+            }
+            .dark-mode .demo-area {
+                border-color: #555;
+            }
+            .card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: all 0.3s;
+                width: 200px;
+            }
+            .accordion-item {
+                margin-bottom: 10px;
+            }
+            .accordion-btn {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .accordion-content {
+                display: none;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+            }
+            .accordion-icon {
+                transition: transform 0.3s;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

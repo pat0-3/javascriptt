@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 4: Tooltip -->
+    <div class="exercise">
+        <h2>4. Tooltip personalizado</h2>
+        <div class="demo-area">
+            <span class="tooltip">Pasa el mouse aquí
+                <span class="tooltip-text">¡Soy un tooltip!</span>
+            </span>
+        </div>
+    </div>
+    <script>
+         // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script> 
+    </script>
+</body>
+</html>

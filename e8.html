@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Ejercicio 8: Dropdown menu -->
+    <div class="exercise">
+        <h2>8. Menú desplegable</h2>
+        <div class="demo-area">
+            <button onclick="toggleDropdown()">Menú ▼</button>
+            <ul id="dropdownMenu" style="display:none; list-style:none; padding:10px; background:#f8f9fa; border-radius:5px; margin-top:5px;">
+                <li><a href="#">Opción 1</a></li>
+                <li><a href="#">Opción 2</a></li>
+                <li><a href="#">Opción 3</a></li>
+            </ul>
+        </div>
+    </div>
+ <script>
+     // Ejercicio 8
+        function toggleDropdown() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+         // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+ </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Ejercicio 10: Reloj digital -->
+    <div class="exercise">
+        <h2>10. Reloj en tiempo real</h2>
+        <div class="demo-area" style="text-align:center;">
+            <h2 id="reloj">--:--:--</h2>
+        </div>
+    </div>
+    <script>
+         // Ejercicio 10
+        function actualizarReloj() {
+            const ahora = new Date();
+            const tiempo = ahora.toLocaleTimeString();
+            document.getElementById('reloj').textContent = tiempo;
+        }
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
+
+        // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style); 
+    </script>
+</body>
+</html>

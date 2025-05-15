@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 11: Barra de progreso -->
+    <div class="exercise">
+        <h2>11. Barra de progreso animada</h2>
+        <div class="demo-area">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button onclick="iniciarProgreso()">Iniciar</button>
+        </div>
+    </div>
+    <script>
+          // Ejercicio 11
+        function iniciarProgreso() {
+            const barra = document.getElementById('progressFill');
+            barra.style.width = '0%';
+            let progreso = 0;
+            const intervalo = setInterval(() => {
+                progreso += 5;
+                barra.style.width = `${progreso}%`;
+                if (progreso >= 100) clearInterval(intervalo);
+            }, 200);
+        }
+
+                // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .dark-mode .exercise {
+                background: #333;
+                color: #fff;
+            }
+            .dark-mode .demo-area {
+                border-color: #555;
+            }
+            .card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: all 0.3s;
+                width: 200px;
+            }
+            .accordion-item {
+                margin-bottom: 10px;
+            }
+            .accordion-btn {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .accordion-content {
+                display: none;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+            }
+            .accordion-icon {
+                transition: transform 0.3s;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

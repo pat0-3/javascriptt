@@ -1,0 +1,133 @@
+     :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #f5f7fa;
+        }
+
+       
+a {
+    display: inline-block; 
+    background-color: rgb(0, 102, 255); 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    margin: 5px;
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+a:hover {
+    background-color: darkblue; 
+    transform: scale(1.1); 
+}
+
+
+body {
+    text-align: center; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    padding-top: 20px; 
+}
+
+        h1 {
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        .exercise {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .demo-area {
+            border: 2px dashed #eee;
+            padding: 20px;
+            margin: 15px 0;
+            min-height: 100px;
+            border-radius: 5px;
+        }
+        .tab-buttons {
+            display: flex;
+            margin-bottom: -1px;
+        }
+        .tab-btn {
+            background: #e9ecef;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background: white;
+            border-bottom: 1px solid white;
+        }
+        .tab-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }

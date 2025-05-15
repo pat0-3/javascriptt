@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <!-- Ejercicio 12: Notificación Toast -->
+    <div class="exercise">
+        <h2>12. Notificación emergente</h2>
+        <div class="demo-area">
+            <button onclick="mostrarNotificacion('¡Acción completada!')">Mostrar notificación</button>
+            <div class="notification" id="notification"></div>
+        </div>
+    </div>
+    <script>
+          // Ejercicio 12
+        function mostrarNotificacion(mensaje) {
+            const notificacion = document.getElementById('notification');
+            notificacion.textContent = mensaje;
+            notificacion.style.display = 'block';
+            setTimeout(() => {
+                notificacion.style.display = 'none';
+            }, 3000);
+        }
+
+        // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .dark-mode .exercise {
+                background: #333;
+                color: #fff;
+            }
+            .dark-mode .demo-area {
+                border-color: #555;
+            }
+            .card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: all 0.3s;
+                width: 200px;
+            }
+            .accordion-item {
+                margin-bottom: 10px;
+            }
+            .accordion-btn {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .accordion-content {
+                display: none;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+            }
+            .accordion-icon {
+                transition: transform 0.3s;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 9: Validación de formulario -->
+    <div class="exercise">
+        <h2>9. Validación de email</h2>
+        <div class="demo-area">
+            <input type="email" id="emailInput" placeholder="Ingresa tu email">
+            <button onclick="validarEmail()">Validar</button>
+            <p id="emailResult" style="color:red; display:none;">Email no válido</p>
+        </div>
+    </div>
+
+    <script>
+        // Ejercicio 9
+        function validarEmail() {
+            const email = document.getElementById('emailInput').value;
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const result = document.getElementById('emailResult');
+            
+            if (regex.test(email)) {
+                result.style.display = 'none';
+                alert('Email válido!');
+            } else {
+                result.style.display = 'block';
+            }
+        }
+
+           // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

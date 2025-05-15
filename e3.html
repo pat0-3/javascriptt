@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 3: Pestañas (Tabs) -->
+    <div class="exercise">
+        <h2>3. Navegación por pestañas</h2>
+        <div class="demo-area">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="abrirTab(event, 'tab1')">Pestaña 1</button>
+                <button class="tab-btn" onclick="abrirTab(event, 'tab2')">Pestaña 2</button>
+            </div>
+            <div id="tab1" class="tab-content active">
+                <h3>Contenido 1</h3>
+                <p>Este es el primer panel de contenido.</p>
+            </div>
+            <div id="tab2" class="tab-content">
+                <h3>Contenido 2</h3>
+                <p>Este es el segundo panel de contenido.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+           // Ejercicio 3
+        function abrirTab(evt, tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+         // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

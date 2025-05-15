@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- Ejercicio 2: Acordeón -->
+    <div class="exercise">
+        <h2>2. Acordeón interactivo</h2>
+        <p>Click para expandir/colapsar contenido:</p>
+        <div class="demo-area">
+            <button class="accordion" onclick="toggleAcordeon(this)">Sección 1 ▼</button>
+            <div class="panel">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim fugit hic quam assumenda doloremque, numquam quos repellendus nostrum, ducimus totam quisquam voluptate unde alias rem architecto distinctio rerum nobis odit.</p>
+            </div>
+            <button class="accordion" onclick="toggleAcordeon(this)">Sección 2 ▼</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia totam sunt natus minima veritatis, nihil nesciunt distinctio odio dolorum, quidem eius ipsa temporibus modi voluptates? Molestiae vero repellat eum illo!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+      // Ejercicio 2
+        function toggleAcordeon(boton) {
+            const panel = boton.nextElementSibling;
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            boton.innerHTML = boton.innerHTML.includes('▼') 
+                ? boton.innerHTML.replace('▼', '▲') 
+                : boton.innerHTML.replace('▲', '▼');
+        }
+        // Estilos dinámicos
+        const style = document.createElement('style');
+        style.textContent = `
+            .panel {
+                display: none;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+            .accordion {
+                background: #f8f9fa;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                margin-bottom: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+</script>
+</body>
+</html>
